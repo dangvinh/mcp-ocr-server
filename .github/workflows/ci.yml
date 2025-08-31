@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run Commitlint
-        run: npx commitlint --edit ${{ github.event.head_commit.id }}
+        run: npx commitlint --from=HEAD~1
 
       - name: Run Tests
         run: npm test
