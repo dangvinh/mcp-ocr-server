@@ -1,0 +1,55 @@
+{
+  "name": "mcp-ocr-server",
+  "version": "1.0.0",
+  "description": "**MCP server for OCR using native Tesseract (C++), built with Node.js, delivering up to 10x faster performance than tesseract.js and integrable with ChatGPT Desktop.**",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dangvinh/mcp-ocr-server.git"
+  },
+  "keywords": [
+    "mcp",
+    "ocr",
+    "tesseract",
+    "nodejs",
+    "chatgpt",
+    "desktop",
+    "ai-agent"
+  ],
+  "author": "Vinh Dang",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/dangvinh/mcp-ocr-server/issues"
+  },
+  "homepage": "https://github.com/dangvinh/mcp-ocr-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "@types/jest": "^29.5.14"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
+    "roots": [
+      "<rootDir>/tests"
+    ]
+  }
+}
