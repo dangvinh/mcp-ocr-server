@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["tests"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist-tests",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "types": ["node", "jest"]
+  }
+}
