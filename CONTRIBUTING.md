@@ -5,7 +5,6 @@ Thank you for considering contributing to the MCP OCR Server project! Your contr
 ## How to Contribute
 
 1. **Fork the repository**
-
    - Create your own fork to work on your changes.
 
 2. **Clone your fork**
@@ -22,7 +21,6 @@ Thank you for considering contributing to the MCP OCR Server project! Your contr
    ```
 
 4. **Follow the folder structure**
-
    - `src/` - Node.js / TypeScript code
    - `cpp/` - C++ OCR tool
    - `tests/` - Unit and integration tests
@@ -38,7 +36,6 @@ Thank you for considering contributing to the MCP OCR Server project! Your contr
    Ensure all tests pass before submitting a pull request.
 
 6. **Follow commit message convention**
-
    - Use **Conventional Commits** format.
    - Examples:
      - `feat(ocr): add new OCR parsing feature`

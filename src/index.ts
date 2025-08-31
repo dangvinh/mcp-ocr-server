@@ -1,1 +1,1 @@
-console.log("MCP OCR Server starting...");
+console.log('MCP OCR Server starting...');
