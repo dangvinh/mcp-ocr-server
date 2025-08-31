@@ -22,7 +22,9 @@ jobs:
         run: npm ci
 
       - name: Run Commitlint
-        run: npx commitlint --from=HEAD~1 --to=HEAD
+        uses: wagoid/commitlint-github-action@v4
+        with:
+          configFile: commitlint.config.js
 
       - name: Run Tests
         run: npm test
