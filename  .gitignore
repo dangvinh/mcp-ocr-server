@@ -1,0 +1,13 @@
+# Node
+node_modules
+dist
+.env
+
+# C++
+*.o
+*.out
+*.exe
+
+# System
+.DS_Store
+Thumbs.db
