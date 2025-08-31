@@ -11,3 +11,6 @@ dist
 # System
 .DS_Store
 Thumbs.db
+
+# Tess data
+tessdata

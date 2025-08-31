@@ -25,4 +25,29 @@
 - Node.js + TypeScript (@modelcontextprotocol/sdk)
 - JSON-RPC 2.0 (MCP standard)
 
+## 🗂 Setup tessdata
+
+The OCR engine requires trained data files to work. Please follow these steps:
+
+1. Create a `tessdata` folder in the project root:
+
+```bash
+mkdir tessdata
+```
+
+2. Download the English trained data:
+
+```bash
+wget https://github.com/tesseract-ocr/tessdata/raw/main/eng.traineddata -P tessdata/
+```
+
+3. If you want to use other languages, download the corresponding `.traineddata` files and place them in the `tessdata/` folder.
+
+4. Ensure your `.env` or `.env.example` has:
+
+```
+TESSDATA_PREFIX=./tessdata
+OCR_LANG=eng
+```
+
 Stay tuned!
