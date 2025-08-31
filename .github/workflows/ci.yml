@@ -31,3 +31,19 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Run Jest with Coverage
+        run: npx jest --coverage
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage/
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: true
+

@@ -1,5 +1,8 @@
 # MCP OCR Server
 
+[![Build Status](https://github.com/dangvinh/mcp-ocr-server/actions/workflows/build.yml/badge.svg)](https://github.com/dangvinh/mcp-ocr-server/actions/workflows/build.yml)
+[![Codecov](https://codecov.io/gh/dangvinh/mcp-ocr-server/branch/main/graph/badge.svg)](https://codecov.io/gh/dangvinh/mcp-ocr-server)
+
 **MCP server for OCR using native Tesseract (C++), built with Node.js, delivering up to 10x faster performance than tesseract.js and integrable with ChatGPT Desktop.**
 
 🚧 Work in Progress 🚧
