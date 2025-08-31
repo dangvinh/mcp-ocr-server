@@ -24,10 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run Commitlint
-        uses: wagoid/commitlint-github-action@v4
-        with:
-          configFile: commitlint.config.cjs
-          firstParent: false
+        run: npx commitlint --edit ${{ github.event.head_commit.id }}
 
       - name: Run Tests
         run: npm test
