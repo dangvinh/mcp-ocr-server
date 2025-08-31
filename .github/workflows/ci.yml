@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -25,6 +27,7 @@ jobs:
         uses: wagoid/commitlint-github-action@v4
         with:
           configFile: commitlint.config.js
+          firstParent: false
 
       - name: Run Tests
         run: npm test
