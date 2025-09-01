@@ -8,7 +8,7 @@ import importPlugin from 'eslint-plugin-import';
 export default [
   // Ignore build and dependency folders
   {
-    ignores: ['dist', 'node_modules', 'coverage'],
+    ignores: ['dist', 'node_modules', 'coverage', 'cpp'],
   },
 
   // JavaScript rules (for config files, scripts, etc.)

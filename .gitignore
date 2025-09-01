@@ -8,6 +8,13 @@ dist
 *.out
 *.exe
 
+# CMake
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
 # System
 .DS_Store
 Thumbs.db
@@ -17,3 +24,8 @@ tessdata
 
 # Jest coverage
 coverage
+
+# VSCode
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
