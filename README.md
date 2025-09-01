@@ -69,46 +69,20 @@ cd mcp-ocr-server/cpp
 
 ### 3. Build the project with CMake
 
-The C++ OCR engine is in the `cpp/` folder. Follow these steps:
-
-#### Step 1: Navigate to the C++ source folder
+You can build the C++ OCR engine using the provided npm script. Run:
 
 ```bash
-cd cpp
+npm run build-core
 ```
 
-#### Step 2: Create a build directory
+This command will create the `cpp/build-core` directory, configure the project with CMake, and build the static library and CLI tool.
 
-```bash
-mkdir build
-cd build
-```
+#### What it builds:
 
-#### Step 3: Configure the project with CMake
+- `libmcp_ocr.a` static library
+- `ocr_cli` executable in `cpp/build-core/bin` (or equivalent)
 
-```bash
-# Standard configuration (Tesseract installed system-wide)
-cmake ..
-```
-
-- If Tesseract or Leptonica are installed in a custom location, specify their paths:
-
-```bash
-cmake -DTesseract_DIR=/path/to/tesseract \
-      -DLeptonica_DIR=/path/to/leptonica ..
-```
-
-#### Step 4: Build the library and CLI tool
-
-```bash
-cmake --build .
-```
-
-- This will build:
-  - `libmcp_ocr.a` static library
-  - `ocr_cli` executable in `cpp/build/bin` (or equivalent)
-
-#### Step 5: Run tests with CTest / GoogleTest
+#### Running tests
 
 ```bash
 # From the build directory
@@ -118,6 +92,16 @@ ctest --verbose
 - This will run all GoogleTest-based tests.
 - Ensure test images or resources exist in `cpp/tests` or `examples/`.
 - The setup works cross-platform (macOS, Linux, Windows).
+
+### 4. Build the Node.js addon
+
+The Node.js addon can be built using the provided npm script. Run:
+
+```bash
+npm run build-addon
+```
+
+This command runs `node-gyp` inside the `cpp/` directory and produces the compiled addon (`ocr_addon.node`) inside `cpp/build/Release/`. This addon is required for Node.js integration with the C++ core.
 
 ---
 
@@ -151,7 +135,7 @@ OCR_LANG=eng
 ### 4. Run OCR CLI
 
 ```bash
-./ocr_cli path/to/image.png output.txt
+./ocr_cli path/to/image.png
 ```
 
 > Ensure the `tessdata` folder is accessible for language files. The project supports macOS, Linux, and Windows (cross-platform).
