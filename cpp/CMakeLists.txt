@@ -32,7 +32,7 @@ if(DEFINED ENV{VCPKG_ROOT})
 endif()
 
 # -----------------------------
-# Tesseract & Leptonica
+# Tesseract & Leptonica paths
 # -----------------------------
 if(APPLE)
   set(TESSERACT_INCLUDE_DIRS "/opt/homebrew/include")
@@ -50,15 +50,15 @@ elseif(WIN32)
 endif()
 
 # -----------------------------
-# OCR Library
+# OCR Core Library
 # -----------------------------
-add_library(mcp_ocr STATIC src/ocr.cpp)
-target_include_directories(mcp_ocr PUBLIC
+add_library(ocr_core STATIC src/ocr.cpp)
+target_include_directories(ocr_core PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${TESSERACT_INCLUDE_DIRS}
   ${LEPTONICA_INCLUDE_DIRS}
 )
-target_link_libraries(mcp_ocr PRIVATE
+target_link_libraries(ocr_core PRIVATE
   ${TESSERACT_LIBRARIES}
   ${LEPTONICA_LIBRARIES}
 )
@@ -67,14 +67,14 @@ target_link_libraries(mcp_ocr PRIVATE
 # CLI Executable
 # -----------------------------
 add_executable(ocr_cli main.cpp)
-target_link_libraries(ocr_cli PRIVATE mcp_ocr)
+target_link_libraries(ocr_cli PRIVATE ocr_core)
 
 # -----------------------------
 # Unit Tests
 # -----------------------------
 if(BUILD_TESTING)
   add_executable(ocr_tests tests/test_main.cpp)
-  target_link_libraries(ocr_tests PRIVATE mcp_ocr GTest::gtest_main)
+  target_link_libraries(ocr_tests PRIVATE ocr_core GTest::gtest_main)
   include(GoogleTest)
   gtest_discover_tests(ocr_tests)
 endif()

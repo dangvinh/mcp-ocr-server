@@ -10,6 +10,7 @@ dist
 
 # CMake
 build/
+build-core/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
@@ -27,5 +28,4 @@ coverage
 
 # VSCode
 .vscode/*
-!.vscode/launch.json
 !.vscode/tasks.json

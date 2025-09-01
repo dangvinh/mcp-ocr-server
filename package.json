@@ -4,9 +4,12 @@
   "description": "**MCP server for OCR using native Tesseract (C++), built with Node.js, delivering up to 10x faster performance than tesseract.js and integrable with ChatGPT Desktop.**",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node src/index.ts",
-    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "build-addon": "cd cpp && npx node-gyp rebuild",
+    "build-core": "mkdir -p cpp/build-core && cd cpp/build-core && cmake .. && cmake --build .",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage --coverageReporters=text-lcov",
     "prepare": "husky",
@@ -36,12 +39,14 @@
   },
   "homepage": "https://github.com/dangvinh/mcp-ocr-server#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.4"
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.34.0",
+    "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "^8.41.0",
@@ -53,10 +58,13 @@
     "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
     "jest": "^30.1.1",
+    "node-addon-api": "^8.5.0",
+    "node-gyp": "^11.4.2",
     "prettier": "^3.6.2",
     "ts-jest": "^29.4.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.41.0"
   }
