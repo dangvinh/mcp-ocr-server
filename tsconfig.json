@@ -1,52 +1,21 @@
 {
-  // TypeScript Compiler Configuration
-  // For more information, see: https://aka.ms/tsconfig
   "compilerOptions": {
-    // Specifies the root directory of input TypeScript source files
-    "rootDir": "./src",
-    // Redirects output structure to the directory
-    "outDir": "./dist",
-
-    // Module system to use. "nodenext" supports both ES modules and CommonJS in Node.js
-    "module": "nodenext",
-    // ECMAScript target version for output files
-    "target": "esnext",
-    // Type declarations to include globally (removed "jest" for source-only optimization)
-    "types": ["node"],
-    // List of library files to be included in the compilation
-    "lib": ["esnext"],
-
-    // Generates corresponding '.map' files for debugging
-    "sourceMap": true,
-    // Generates corresponding '.d.ts' files for type declarations
-    "declaration": true,
-    // Generates corresponding '.d.ts.map' files for declarations
-    "declarationMap": true,
-
-    // Enables stricter checking of indexed access types
-    "noUncheckedIndexedAccess": true,
-    // Requires exact types for optional properties
-    "exactOptionalPropertyTypes": true,
-
-    // Enable all strict type-checking options
-    "strict": true,
-    // Preserves import/export syntax in the transpiled output
-    "verbatimModuleSyntax": true,
-    // Ensures each file can be safely transpiled independently
-    "isolatedModules": true,
-    // Prevents imports that only have side effects
-    "noUncheckedSideEffectImports": true,
-    // Forces how modules are detected in the codebase
-    "moduleDetection": "force",
-    // Skips type checking of declaration files for faster builds
-    "skipLibCheck": true,
-    // Determines how modules get resolved; "nodenext" for Node.js ESM/CJS
-    "moduleResolution": "nodenext",
-    // Enables interoperability between CommonJS and ES Modules
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "noEmit": true,
     "esModuleInterop": true,
-    // Allows default imports from modules with no default export
-    "allowSyntheticDefaultImports": true
+    "skipLibCheck": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": false,
+    "types": ["node", "express", "jest"],
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  // List of files or directories to include in the compilation (source files only)
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "coverage"]
 }
