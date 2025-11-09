@@ -1,31 +1,179 @@
-# Node
-node_modules
-dist
+# ============================================
+# Node.js / NPM
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Dependency directories
+.npm/
+.yarn/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Cache
+.eslintcache
+.cache/
+.turbo/
+
+# ============================================
+# Environment & Secrets
+# ============================================
 .env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.pem
+*.key
+*.cert
+!.env.example
 
-# C++
+# ============================================
+# C++ Build Artifacts
+# ============================================
+# Compiled object files
 *.o
-*.out
-*.exe
+*.obj
+*.lo
+*.slo
 
+# Compiled static libraries
+*.a
+*.lib
+*.la
+
+# Compiled dynamic libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Windows specific
+*.ilk
+*.pdb
+*.exp
+*.idb
+*.suo
+*.user
+
+# ============================================
 # CMake
+# ============================================
 build/
 build-core/
+cmake-build-*/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
 Makefile
+install_manifest.txt
+Testing/
+_deps/
 
-# System
-.DS_Store
-Thumbs.db
+# ============================================
+# node-gyp / Native Addons
+# ============================================
+cpp/build/
+*.node
+.deps/
+gyp-mac-tool
 
-# Tess data
-tessdata
+# ============================================
+# Testing & Coverage
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+junit.xml
+test-results/
+*.log
 
-# Jest coverage
-coverage
-
+# ============================================
+# IDE & Editors
+# ============================================
 # VSCode
 .vscode/*
 !.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains IDEs (WebStorm, CLion, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# ============================================
+# OS Specific
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================
+# Project Specific
+# ============================================
+# Tesseract trained data (large files)
+tessdata/
+!tessdata/.gitkeep
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Documentation build
+docs/_build/
+site/
